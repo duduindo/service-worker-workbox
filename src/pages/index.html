@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workbox - Service Worker</title>
+  <style>
+    body { background: silver;  }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Index</h1>
+    <h3><a href="page.html">Page link</a></h3>
+
+    <figure>
+      <img src="images/get_started16.png" > <hr>
+      <img src="images/get_started32.png" > <hr>
+      <img src="images/get_started48.png" > <hr>
+      <img src="images/get_started128.png" > <hr>
+    </figure>
+  </main>
+
+  <script src="index.bundle.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.bundle.js')
+      })
+    }
+  </script>
+</body>
+</html>
